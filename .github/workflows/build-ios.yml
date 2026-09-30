@@ -1,0 +1,32 @@
+name: Build Planning Location IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Xcode version
+        run: xcodebuild -version
+      - name: Build unsigned app
+        run: |
+          set -e
+          xcodebuild -project PlanningLocation.xcodeproj -scheme PlanningLocation -configuration Release -sdk iphoneos -derivedDataPath build CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO clean build
+      - name: Package IPA
+        run: |
+          set -e
+          APP=$(find build/Build/Products/Release-iphoneos -maxdepth 1 -name '*.app' -print -quit)
+          test -n "$APP"
+          mkdir Payload
+          cp -R "$APP" Payload/
+          ditto -c -k --keepParent Payload PlanningLocation-unsigned.ipa
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: PlanningLocation-unsigned-IPA
+          path: PlanningLocation-unsigned.ipa
