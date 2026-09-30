@@ -1,0 +1,28 @@
+// !$*UTF8*$!
+{
+ archiveVersion = 1;
+ classes = {};
+ objectVersion = 56;
+ objects = {
+  A1 = {isa = PBXBuildFile; fileRef = B1; };
+  A2 = {isa = PBXBuildFile; fileRef = B2; };
+  B1 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanningLocationApp.swift; sourceTree = "<group>"; };
+  B2 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+  B3 = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+  B4 = {isa = PBXFileReference; explicitFileType = wrapper.application; path = PlanningLocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
+  C1 = {isa = PBXGroup; children = (C2,B4,); sourceTree = "<group>"; };
+  C2 = {isa = PBXGroup; children = (B1,B2,B3,); path = PlanningLocation; sourceTree = "<group>"; };
+  D1 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (A1,A2,); runOnlyForDeploymentPostprocessing = 0; };
+  D2 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  D3 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+  E1 = {isa = PBXNativeTarget; buildConfigurationList = H2; buildPhases = (D1,D2,D3); buildRules = (); dependencies = (); name = PlanningLocation; productName = PlanningLocation; productReference = B4; productType = "com.apple.product-type.application"; };
+  F1 = {isa = PBXProject; attributes = {BuildIndependentTargetsInParallel = 1; LastUpgradeCheck = 1600; TargetAttributes = {E1 = {CreatedOnToolsVersion = 16.0;};};}; buildConfigurationList = H1; compatibilityVersion = "Xcode 14.0"; developmentRegion = fr; hasScannedForEncodings = 0; knownRegions = (fr,en,Base); mainGroup = C1; projectDirPath = ""; projectRoot = ""; targets = (E1); };
+  G1 = {isa = XCBuildConfiguration; buildSettings = {SWIFT_VERSION = 5.0;}; name = Debug; };
+  G2 = {isa = XCBuildConfiguration; buildSettings = {SWIFT_VERSION = 5.0;}; name = Release; };
+  G3 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGNING_ALLOWED = NO; CODE_SIGNING_REQUIRED = NO; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = PlanningLocation/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 16.0; PRODUCT_BUNDLE_IDENTIFIER = com.valincuservices.planninglocation; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Debug; };
+  G4 = {isa = XCBuildConfiguration; buildSettings = {CODE_SIGNING_ALLOWED = NO; CODE_SIGNING_REQUIRED = NO; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = PlanningLocation/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 16.0; PRODUCT_BUNDLE_IDENTIFIER = com.valincuservices.planninglocation; PRODUCT_NAME = "$(TARGET_NAME)"; SDKROOT = iphoneos; SWIFT_COMPILATION_MODE = wholemodule; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1;}; name = Release; };
+  H1 = {isa = XCConfigurationList; buildConfigurations = (G1,G2); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+  H2 = {isa = XCConfigurationList; buildConfigurations = (G3,G4); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+ };
+ rootObject = F1;
+}
